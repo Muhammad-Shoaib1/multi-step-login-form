@@ -1,0 +1,228 @@
+/* Basic Reset and Styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  font-size: 10px;
+}
+
+/* Body Background Styling */
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./bg.png) no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container Styling */
+.container {
+  width: 36rem;
+  height: 40rem;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Form Styling */
+.container form {
+  position: absolute;
+  top: 7rem;
+  left: 3rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.5s ease-in-out;
+  /* Smooth transition for sliding effect */
+  opacity: 0;
+  /* Initially hide forms */
+  animation: fadeIn 0.6s forwards;
+  /* Fade-in animation */
+}
+
+#form1 {
+  opacity: 1;
+  /* Show first form on load */
+}
+
+/* Form Title Styling */
+form h3 {
+  text-align: center;
+  font-size: 3rem;
+  color: #999;
+  margin-bottom: 2rem;
+}
+
+/* Input Field Styling */
+form input {
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  margin: 1rem 0;
+  border-bottom: 2px solid gray;
+  padding: 0.5rem;
+  background: transparent;
+}
+
+::placeholder {
+  color: #777;
+}
+
+/* Button Styling */
+.btnBox {
+  width: 100%;
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.btnBox button {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  width: 10rem;
+  height: 5rem;
+  border-radius: 15px;
+  margin: 0 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  /* Button hover effect */
+}
+
+/* Button Hover Effect */
+.btnBox button:hover {
+  transform: scale(1.1);
+  /* Enlarge button slightly on hover */
+}
+
+/* Form Positioning */
+#form2,
+#form3 {
+  left: 45rem;
+}
+
+/* Step Indicator Styling */
+.step-row {
+  width: 36rem;
+  height: 5rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -1px 5px -1px #000;
+  position: relative;
+}
+
+/* Step Column Styling */
+.step-col {
+  width: 12rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+/* Progress Bar Styling */
+#progress {
+  position: absolute;
+  height: 100%;
+  width: 12rem;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Progress Bar Arrow Styling */
+#progress::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  right: -2rem;
+  top: 0;
+  border-bottom: 2.5rem solid transparent;
+  border-top: 2.5rem solid transparent;
+  border-left: 2rem solid #ffad06;
+}
+
+/* Class to Hide Arrow */
+.hide-arrow::after {
+  display: none !important;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Overlay Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.overlay-content h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.overlay-content p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.overlay-content button {
+  font-size: 1.6rem;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (min-width:2100px){
+  :root{
+    font-size: 15px;
+  }
+}
+@media (min-width:1400px) and (max-width:2100px) {
+  :root {
+    font-size: 12px;
+  }
+}
+@media (max-width:900px) {
+  :root{
+    font-size: 8.5px;
+  }
+}
+@media (max-width:550px) {
+  :root {
+    font-size: 7px;
+  }
+}
